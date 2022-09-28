@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=bs4
+
+%:
+	dh $@ --with python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	python3 -m sphinx -aEN -b html -d build/doctrees doc/source build/html
+	python3 -m sphinx -aEN -b html -D language=pt_BR -d build/doctrees.ptbr doc.ptbr/source build/html.ptbr
+	python3 -m sphinx -aEN -b html -D language=ru_RU -d build/doctrees.ru doc.ru/source build/html.ru
+	python3 -m sphinx -aEN -b html -D language=zh_CN -d build/doctrees.zh doc.zh/source build/html.zh
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
+
+override_dh_installchangelogs:
+	dh_installchangelogs NEWS.txt
+
+override_dh_installdocs:
+	dh_installdocs -p python-bs4-doc --doc-main-package=python-bs4-doc
+	dh_installdocs --remaining-packages

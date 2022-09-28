@@ -1,0 +1,496 @@
+beautifulsoup4 (4.10.0-2) unstable; urgency=medium
+
+  * Replace nose with pytest (see: #997758).
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 24 Oct 2021 11:39:39 -0700
+
+beautifulsoup4 (4.10.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #997146)
+  * Add upstream metadata.
+  * Switch watch file to PyPI, the author's home page is currently out of
+    date.
+  * Bump copyright years.
+  * Adjust autopkgtest to handle bs4.tests not being shipped in the installed
+    package.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+  * Bump debhelper compat level to 13.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 23 Oct 2021 15:04:48 -0700
+
+beautifulsoup4 (4.9.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 07 Oct 2020 20:53:02 -0700
+
+beautifulsoup4 (4.9.2-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Explicitly depend on python3-soupsieve. The python_version restriction
+    causes dh_python3 to ignore the dependency.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 29 Sep 2020 11:45:22 -0700
+
+beautifulsoup4 (4.9.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop patch soupsieve-2.0, superseded upstream.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 26 May 2020 09:52:57 -0700
+
+beautifulsoup4 (4.9.0-2) unstable; urgency=medium
+
+  * Fix test failures with soupsieve 2.0. (Closes: #958554)
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 30 Apr 2020 11:51:08 -0700
+
+beautifulsoup4 (4.9.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update copyright years.
+  * Build ru docs.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 13 Apr 2020 10:08:27 -0700
+
+beautifulsoup4 (4.8.2-2) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * Bump copyright years.
+  * Drop support for Python 2. (Closes: #936196)
+  * Bump Standards-Version to 4.5.0, no changes needed.
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Apr 2020 11:56:13 -0400
+
+beautifulsoup4 (4.8.2-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Drop patch, superseded upstream.
+  * Build Portuguese and Chinese docs.
+    - B-D on python3-stemmer for Portuguese Sphinx.
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 27 Dec 2019 07:07:00 +0200
+
+beautifulsoup4 (4.8.0-2) unstable; urgency=medium
+
+  * Patch: Fixed the definition of the default XML namespace when using lxml
+    4.4. (Closes: #939457)
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 06 Sep 2019 15:58:05 -0300
+
+beautifulsoup4 (4.8.0-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream version.
+  * Bump debhelper compat to 12.
+  * Drop pypy binary package, Debian is pruning python 2 modules, where
+    possible.
+  * Drop patch, no longer needed, Debian doesn't support Python 3.7.
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.0.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 04 Aug 2019 10:12:50 -0300
+
+beautifulsoup4 (4.7.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Now depends on {python,python3,pypy}-soupsieve.
+    - Tag test dependencies <!nocheck>, to keep the stack bootstrappable.
+  * Bump copyright years.
+  * Test with html5lib, where possible.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 02 Feb 2019 11:14:00 +0100
+
+beautifulsoup4 (4.6.3-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs
+
+  [ Stefano Rivera ]
+  * Use pybuild's --name feature to place files in the right binary package.
+  * Bump Standards-Version to 4.3.0, no changes needed.
+  * Bump debhelper compat to 11.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 30 Dec 2018 19:21:18 +0100
+
+beautifulsoup4 (4.6.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump copyright years.
+  * Upstream renamed the README.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 21 Aug 2018 14:56:56 -0700
+
+beautifulsoup4 (4.6.1-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Declare Rules-Requires-Root: no.
+  * Bump Standards-Version to 4.2.0, no changes needed.
+  * Bump debhelper compat level to 10.
+  * Build Sphinx docs with Python 3.
+  * Patch: Avoid 2to3 differences between Python 3.6 and 3.7.
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+  * d/control: Remove ancient X-Python-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 09 Aug 2018 16:55:46 -0700
+
+beautifulsoup4 (4.6.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards_version to 4.0.0, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 22 Jun 2017 21:38:54 -0700
+
+beautifulsoup4 (4.5.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 08 Jan 2017 18:29:36 +1100
+
+beautifulsoup4 (4.5.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Switch upstream URLs to https.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 08 Aug 2016 12:23:11 -0700
+
+beautifulsoup4 (4.5.0-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Bump copyright years.
+  * Upstream dropped Python 2.6 support.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+  * Bump debhelper compat level to 9.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 25 Jul 2016 16:52:52 -0700
+
+beautifulsoup4 (4.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 21 Oct 2015 15:18:27 -0700
+
+beautifulsoup4 (4.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop patches, superseded upstream.
+  * Build-Depend on python-setuptools + python3-setuptools.
+  * Bumped copyright years.
+  * Updated license to Expat. The trailing "Dammit" has been removed.
+  * chardet-compatible-test.patch: Pass tests in the presence of
+    python-chardet.
+  * Drop XS-Testsuite control field, now unnecessary.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 20 Sep 2015 18:02:56 -0700
+
+beautifulsoup4 (4.3.2-2) unstable; urgency=medium
+
+  * Patch +python3.4-warnings: Squash new warnings under Python 3.4, fixing
+    the test suite, and preparing for Python 3.5. (Closes: #765142)
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 16 Oct 2014 22:57:41 -0700
+
+beautifulsoup4 (4.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.5, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 03 May 2014 14:19:04 +0200
+
+beautifulsoup4 (4.2.1-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #716719)
+    - Bugfixes, and a behaviour change in entity handling.
+  * Port to dh-python.
+  * Build new binary package for PyPy: pypy-bs4.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 09 Aug 2013 18:39:43 +0200
+
+beautifulsoup4 (4.2.0-2) unstable; urgency=low
+
+  * Depend on python{,3}-lxml in autopkgtests.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 26 May 2013 11:33:30 +0200
+
+beautifulsoup4 (4.2.0-1) unstable; urgency=low
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Upload to unstable, wheezy released.
+  * Drop all patches, superseded upstream.
+  * Bump copyright years.
+  * Add autopkgtests.
+  * Run unit tests against python3.
+
+  [ Dmitry Shachnev ]
+  * Use /usr/bin/nosetests3 instead of /usr/bin/nosetests-3.X in
+    autopkgtests.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 25 May 2013 21:27:22 +0200
+
+beautifulsoup4 (4.1.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Upload to experimental, as Debian is frozen for wheezy.
+  * Bump Standards-Version to 3.9.4.
+    - Bump debhelper dependency to 8.1 for build-{arch,indep} support.
+  * Patch python2.6-compat: Disable a 2.6-incompatible test under python 2.6
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 10 Nov 2012 17:55:49 +0200
+
+beautifulsoup4 (4.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 03 Jun 2012 09:57:29 +0100
+
+beautifulsoup4 (4.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use nose for python3 tests too.
+    - B-D on python3-nose.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 28 Apr 2012 14:42:27 +0200
+
+beautifulsoup4 (4.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 08 Apr 2012 23:34:57 +0200
+
+beautifulsoup4 (4.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 02 Apr 2012 21:07:58 +0200
+
+beautifulsoup4 (4.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 15 Mar 2012 10:15:22 +0200
+
+beautifulsoup4 (4.0.0~b8-1) unstable; urgency=low
+
+  * New upstream beta.
+  * Drop all patches, no longer needed.
+  * B-D on python-nose instead of python-unittest2 for tests under 2.x
+  * Bump standards version to 3.9.3, no changes needed.
+  * Update machine-readable copyright Format to 1.0.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Feb 2012 14:11:49 +0200
+
+beautifulsoup4 (4.0.0~b5-1) unstable; urgency=low
+
+  * New upstream beta.
+  * Refresh patches.
+  * Drop failing-tests patch, incorporated upstream.
+  * Patch no-install-data: Don't install documentation from setup.py.
+  * Update watch file to new download location.
+  * Swap alternative dependency order for html5lib | lxml, lxml is now
+    preferred, upstream.
+  * Build sphinx documentation.
+    - New package: python-bs4-doc
+    - B-D on python-sphinx.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 15 Feb 2012 19:58:57 +0200
+
+beautifulsoup4 (4.0.0~b3-1) unstable; urgency=low
+
+  * New upstream release with an incompatible API.
+    - In a new source package, beautifulsoup4.
+    - Building python-bs4 and python3-bs4
+  * Update copyright years, and licence to Expatish.
+  * B-D on python{,3}-lxml, python{,3}pkg-resources for unittests.
+  * B-D on python-unit2 for unittests under 2.6.
+    Patch unittest2.
+  * B-D on python3-all for python3 package.
+  * Patch failing-tests: Skip a test that's looking for a bug in HTMLParser in
+    python (it fails on 2.7).
+  * Recommend python-html5lib | python-lxml and python3-lxml (there's no py3k
+    html5lib yet).
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 08 Feb 2012 12:06:52 +0200
+
+beautifulsoup (3.2.0-2) unstable; urgency=low
+
+  * Rebuild for Python transition.
+  * Remove Breaks: ${python:Breaks}, no longer used by dh_python2.
+  * Bump standards version to 3.9.2, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 14 Feb 2011 15:21:40 +0200
+
+beautifulsoup (3.2.0-1) unstable; urgency=low
+
+  * Adopting beautifulsoup for Debian Python Modules Team. (Closes: #612875)
+  * New upstream version.
+    - The 3.2 release reverts back to the 3.0 SGMLParser approach.
+      (Closes: #564160, LP: #392968)
+    - <script> blocks are correctly handled again
+      (Closes: #516824, LP: #357067)
+    - Upstream no longer ships a changelog. (Closes: #530408)
+  * Bump standards version to 3.9.1. Moved into python section.
+  * Switch to Source Format 3.0 (quilt).
+  * Switch to dh_python2.
+    - Use X-Python-Version.
+  * debian/control:
+    - Drop -XB-Python-Version. Deprecated.
+    - Drop Provides, Replaces, Conflicts. Versioned package names for Python
+      modules are deprecated. No supported releases have packages requiring
+      them.
+    - Add Homepage.
+    - Add Vcs- URLs.
+    - Recommend python-chardet.
+  * Bump debhelper dependency and compat level to 8.
+  * Use DEP5 format debian/copyright.
+  * Add watch file. (Closes: #607864)
+  * Don't install tests as an example.
+  * debian/rules:
+    - Use minimal dh 7 style.
+    - Run test suite during build.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 14 Feb 2011 15:15:21 +0200
+
+beautifulsoup (3.1.0.1-2) unstable; urgency=low
+
+  * Disable installation of test scripts (Closes: #528430)
+
+ -- Decklin Foster <decklin@red-bean.com>  Sun, 24 May 2009 15:00:59 -0400
+
+beautifulsoup (3.1.0.1-1) unstable; urgency=low
+
+  * New Upstream Version
+
+ -- Decklin Foster <decklin@red-bean.com>  Tue, 06 Jan 2009 18:59:51 -0500
+
+beautifulsoup (3.0.7-1) unstable; urgency=low
+
+  * New upstream version, fixes UnicodeDecodeError (Closes: #483579, #479414)
+
+ -- Decklin Foster <decklin@red-bean.com>  Mon, 30 Jun 2008 19:04:07 -0400
+
+beautifulsoup (3.0.6-1) unstable; urgency=low
+
+  * New upstream version (Closes: #487180)
+
+ -- Decklin Foster <decklin@red-bean.com>  Thu, 19 Jun 2008 22:19:12 -0400
+
+beautifulsoup (3.0.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated debian/copyright with new license (dammit).
+
+ -- Decklin Foster <decklin@red-bean.com>  Sun, 17 Feb 2008 17:45:34 -0500
+
+beautifulsoup (3.0.4-1) unstable; urgency=low
+
+  * New upstream release (Closes: #401849)
+  * Remove dh_python and other cruft.
+
+ -- Decklin Foster <decklin@red-bean.com>  Mon, 21 May 2007 13:26:19 -0400
+
+beautifulsoup (3.0.3-1) unstable; urgency=low
+
+  * New upstream release
+    - Correctly read in keyword arguments to findAll (Closes: #418432)
+  * Remove obsolete mention of separate packages built for Python 2.3 and 2.4
+    from long description and Provides: (Closes: #399931, #413695)
+
+ -- Decklin Foster <decklin@red-bean.com>  Mon, 26 Mar 2007 22:12:59 -0400
+
+beautifulsoup (3.0.1-2) unstable; urgency=low
+
+  * Build with python-support. No more python2.3-beautifulsoup or
+    python2.4-beautifulsoup.
+  * Move python from B-D-I to B-D.
+
+ -- Decklin Foster <decklin@red-bean.com>  Sun, 18 Jun 2006 12:42:42 -0400
+
+beautifulsoup (3.0.1-1) unstable; urgency=low
+
+  * New upstream release
+    - Fixed documentation (Closes: #349609)
+  * Move debhelper from Build-Depends-Indep to Build-Depends.
+  * Standards-Version: 3.7.2.
+
+ -- Decklin Foster <decklin@red-bean.com>  Thu,  1 Jun 2006 09:49:46 -0400
+
+beautifulsoup (2.1.1-5) unstable; urgency=low
+
+  * Fix typo in description: (Closes: #345289)
+  * Add Conflicts: on uld unsplit package (Closes: #345088)
+
+ -- Decklin Foster <decklin@red-bean.com>  Mon,  2 Jan 2006 22:52:38 -0500
+
+beautifulsoup (2.1.1-4) unstable; urgency=low
+
+  * Match version in short description with long desc (Closes: #343480)
+
+ -- Decklin Foster <decklin@red-bean.com>  Thu, 15 Dec 2005 17:02:29 -0500
+
+beautifulsoup (2.1.1-3) unstable; urgency=low
+
+  * Fix Description (argh).
+
+ -- Decklin Foster <decklin@red-bean.com>  Tue, 13 Dec 2005 21:52:35 -0500
+
+beautifulsoup (2.1.1-2) unstable; urgency=low
+
+  * Install BeautifulSoupTests.py as an example rather than a regular doc.
+  * Split python-beautifulsoup into python2.3-beautifulsoup and
+    python2.4-beautifulsoup (Closes: #339997)
+
+ -- Decklin Foster <decklin@red-bean.com>  Sat, 10 Dec 2005 11:04:56 -0500
+
+beautifulsoup (2.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.6.2.
+
+ -- Decklin Foster <decklin@red-bean.com>  Mon, 19 Sep 2005 03:26:41 -0400
+
+beautifulsoup (2.1.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #309580)
+
+ -- Decklin Foster <decklin@red-bean.com>  Fri, 27 May 2005 10:12:14 -0400
+
+beautifulsoup (1.2+cvs20041017-1) unstable; urgency=low
+
+  * Corrected version number and repacked the orig.tar.gz to go with it.
+
+ -- Decklin Foster <decklin@red-bean.com>  Wed, 16 Mar 2005 16:15:36 -0500
+
+beautifulsoup (1.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Decklin Foster <decklin@red-bean.com>  Thu, 10 Feb 2005 13:57:09 -0500

@@ -1,0 +1,12 @@
+Document: python-bs4-doc-zh-cn
+Title: Beautiful Soup 文档
+Author: Leonard Richardsonn
+Abstract: Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-bs4-doc/html.zh/index.html
+Files: /usr/share/doc/python-bs4-doc/html.zh/*.html
+
+Format: Text
+Files: /usr/share/doc/python-bs4-doc/rst.zh/*.txt

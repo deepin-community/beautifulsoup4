@@ -1,0 +1,17 @@
+#!/bin/sh
+set -efu
+
+pys="$(py3versions -r 2> /dev/null)"
+
+cp -a bs4/tests "$AUTOPKGTEST_TMP"
+cat > "$AUTOPKGTEST_TMP/tests/__init__.py" <<EOF
+import sys
+sys.modules['bs4.tests'] = sys.modules[__name__]
+EOF
+
+cd "$AUTOPKGTEST_TMP"
+
+for py in $pys; do
+	echo "=== $py ==="
+	$py -m pytest tests
+done

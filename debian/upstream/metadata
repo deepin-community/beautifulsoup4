@@ -1,0 +1,10 @@
+---
+Bug-Database: https://bugs.launchpad.net/beautifulsoup/
+Bug-Submit: https://bugs.launchpad.net/beautifulsoup/+filebug
+Changelog: https://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/CHANGELOG
+Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Registry:
+  - Name: PyPI
+    Entry: beautifulsoup4
+Repository-Browse: https://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/files
+Repository: https://code.launchpad.net/~leonardr/beautifulsoup/bs4

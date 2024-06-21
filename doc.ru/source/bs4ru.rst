@@ -33,7 +33,7 @@
 * このページは日本語で利用できます(`外部リンク <http://kondou.com/BS4/>`_)
 * `이 문서는 한국어 번역도 가능합니다. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.ko/>`_
 * `Este documento também está disponível em Português do Brasil. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.ptbr/>`_
-
+* `Este documento también está disponible en una traducción al español. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.es/>`_
 
 Техническая поддержка
 ---------------------
@@ -1565,7 +1565,7 @@ Soup API, вы можете использовать сокращенную за
   #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>;
   #  and they lived at the bottom of a well.</p>
 
-  a_string.find_parents("p", class="title")
+  a_string.find_parents("p", class_="title")
   # []
 
 Один из трех тегов <a> является прямым родителем искомой строки,

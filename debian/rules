@@ -3,14 +3,16 @@
 export PYBUILD_NAME=bs4
 
 %:
-	dh $@ --with python3,sphinxdoc --buildsystem=pybuild
+	dh $@ --buildsystem=pybuild
 
-override_dh_auto_build:
-	dh_auto_build
+execute_after_dh_auto_build:
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
 	python3 -m sphinx -aEN -b html -d build/doctrees doc/source build/html
+	python3 -m sphinx -aEN -b html -D language=es_ES -d build/doctrees.es doc.es/source build/html.es
 	python3 -m sphinx -aEN -b html -D language=pt_BR -d build/doctrees.ptbr doc.ptbr/source build/html.ptbr
 	python3 -m sphinx -aEN -b html -D language=ru_RU -d build/doctrees.ru doc.ru/source build/html.ru
 	python3 -m sphinx -aEN -b html -D language=zh_CN -d build/doctrees.zh doc.zh/source build/html.zh
+endif
 
 override_dh_auto_clean:
 	dh_auto_clean

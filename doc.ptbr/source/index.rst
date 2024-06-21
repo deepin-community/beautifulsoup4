@@ -29,6 +29,7 @@ Esta documentação foi traduzida para outros idiomas pelos usuários do Beautif
 * `这篇文档当然还有中文版. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/>`_
 * このページは日本語で利用できます(`外部リンク <http://kondou.com/BS4/>`_)
 * `이 문서는 한국어 번역도 가능합니다. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.ko/>`_
+* `Este documento también está disponible en una traducción al español. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.es/>`_
 * `Эта документация доступна на русском языке. <https://www.crummy.com/software/BeautifulSoup/bs4/doc.ru/>`_
 
 Como conseguir ajuda:
@@ -90,7 +91,7 @@ de dados aninhada::
  #     Lacie
  #    </a>
  #    and
- #    <a class="sister" href="http://example.com/tillie" id="link2">
+ #    <a class="sister" href="http://example.com/tillie" id="link3">
  #     Tillie
  #    </a>
  #    ; and they lived at the bottom of a well.
@@ -1542,7 +1543,7 @@ Vamos experimentá-los: começando por uma string "enterrada" no documento
   #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>;
   #  and they lived at the bottom of a well.</p>
 
-  a_string.find_parents("p", class="title")
+  a_string.find_parents("p", class_="title")
   # []
 
 Uma das três tags <a> é diretamente um nível superior da string em

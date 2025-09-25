@@ -1,0 +1,40 @@
+From: Stefano Rivera <stefano@rivera.za.net>
+Date: Thu, 15 Aug 2024 23:11:26 +0200
+Subject: Don't expect NotImplementedError for unknown pseudo-classes
+
+soupsieve 2.6 raises SelectorSyntaxError instead of NotImplementedError.
+
+https://github.com/facelessuser/soupsieve/pull/270
+
+Forwarded: https://code.launchpad.net/~stefanor/beautifulsoup/+git/beautifulsoup/+merge/471367
+---
+ bs4/tests/test_css.py | 2 +-
+ tox.ini               | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/bs4/tests/test_css.py b/bs4/tests/test_css.py
+index 359dbcd..fc7bdb7 100644
+--- a/bs4/tests/test_css.py
++++ b/bs4/tests/test_css.py
+@@ -332,7 +332,7 @@ class TestCSSSelectors(SoupTest):
+         assert "yes" == chosen.string
+ 
+     def test_unsupported_pseudoclass(self):
+-        with pytest.raises(NotImplementedError):
++        with pytest.raises(SelectorSyntaxError):
+             self.soup.select("a:no-such-pseudoclass")
+ 
+         with pytest.raises(SelectorSyntaxError):
+diff --git a/tox.ini b/tox.ini
+index fc55fca..366c6dc 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -10,7 +10,7 @@ wheel_build_env = .pkg
+ description = run the tests with all dependencies installed
+ deps = lxml
+      html5lib
+-     soupsieve>=1.2
++     soupsieve>=2.6
+      pytest>=6
+ commands = pytest {tty:--color=yes} {posargs}
+ 

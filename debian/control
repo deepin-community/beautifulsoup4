@@ -14,10 +14,10 @@ Build-Depends:
  python3-html5lib <!nocheck>,
  python3-lxml <!nocheck>,
  python3-pytest <!nocheck>,
- python3-soupsieve <!nocheck>,
+ python3-soupsieve (>= 2.6) <!nocheck>,
  python3-sphinx <!nodoc>,
  python3-stemmer <!nocheck>
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Homepage: https://www.crummy.com/software/BeautifulSoup
 Vcs-Git: https://salsa.debian.org/python-team/packages/beautifulsoup4.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/beautifulsoup4
